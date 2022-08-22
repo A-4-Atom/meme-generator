@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  margin: 0;
+}
+
+main {
+  padding: 36px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  color: white;
+  padding: 20px;
+}
+
+.header-image {
+  /* height: 100%; */
+  width: 44.18px;
+  height: 37px;
+  margin-right: 15px;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  margin-right: auto;
+}
+
+.header-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: grid;
+  grid-template: 50px 50px / repeat(12, 1fr);
+  grid-template-areas:
+    "a a a a a a a b b b b b"
+    "c c c c c c c c d d d d";
+  grid-gap: 20px;
+  width: 60%;
+}
+
+#a {
+  grid-area: a;
+}
+#b {
+  grid-area: b;
+}
+#c {
+  grid-area: c;
+}
+#d {
+  grid-area: d;
+}
+
+.form-input {
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  border: 1px solid #d5d4d8;
+  text-indent: 5px;
+}
+
+.form-button {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.meme {
+  border: 2px black solid;
+  border-radius: 15px;
+  max-width: 60%;
+  padding-bottom: 50px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.meme-image {
+  max-width: 100%;
+  /* max-height: 500px; */
+  border-radius: 3px;
+  margin-top: 70px;
+}
+
+.meme-text {
+  position: absolute;
+  top: 0;
+  width: fit-content;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+/* 
+.test {
+  height: 100px;
+  width: 100px;
+  background-color: slateblue;
+  position: absolute;
+  top: 70px;
+  right: 0;
+} */
+
+@media only screen and (max-width: 768px) {
+  .meme {
+    max-width: 90%;
+  }
+  .form {
+    width: 100%;
+  }
+  .meme-text {
+    font-size: 0.9em;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+      -1px 1px 0 #000, 0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000,
+      1px 1px 5px #000;
+  }
+}
