@@ -11,6 +11,7 @@ export default function Meme() {
     texts: [],
   });
   const inputText = useRef();
+  const memeImage = useRef();
   const [allMemes, setAllMemes] = useState([]);
 
   useEffect(() => {
