@@ -11,7 +11,6 @@ export default function Meme() {
     texts: [],
   });
   const inputText = useRef();
-  const memeImage = useRef();
   const [allMemes, setAllMemes] = useState([]);
 
   useEffect(() => {
@@ -36,6 +35,10 @@ export default function Meme() {
     } else {
       setMeme((oldMeme) => {
         const newText = oldMeme.texts;
+<<<<<<< HEAD
+=======
+        // newText.push({inputText.current.value});
+>>>>>>> 8c6adf45a5db6d5268075921ff8c361b0b64a623
         newText.push({
           text: inputText.current.value,
           id: nanoid(),
@@ -46,9 +49,11 @@ export default function Meme() {
         };
       });
     }
+    // console.log(meme.texts);
   }
 
-  function deleteTexts(id) {
+  //For Desktop
+  function deleteTextDesktop(id) {
     setMeme((oldMeme) => {
       const updatedTexts = oldMeme.texts.filter((item) => item.id !== id);
       return {
@@ -58,12 +63,32 @@ export default function Meme() {
     });
   }
 
+<<<<<<< HEAD
+=======
+  //for Mobile
+  // function deleteTextMobile(id) {
+  //   // if (isMobile && event.detail === 2) {
+  //   //   setMeme((oldMeme) => {
+  //   //     const updatedTexts = oldMeme.texts.filter((item) => item.id !== id);
+  //   //     return {
+  //   //       ...oldMeme,
+  //   //       texts: updatedTexts,
+  //   //     };
+  //   //   });
+  //   // }
+  // }
+
+>>>>>>> 8c6adf45a5db6d5268075921ff8c361b0b64a623
   const textElements = meme.texts.map((item) => (
     <Draggable bounds="parent" key={item.id}>
       <h1
         className="meme-text"
         id="double-tap"
+<<<<<<< HEAD
         onDoubleClick={() => deleteTexts(item.id)}
+=======
+        onDoubleClick={() => deleteTextDesktop(item.id)}
+>>>>>>> 8c6adf45a5db6d5268075921ff8c361b0b64a623
         key={item.id}
       >
         {item.text}
@@ -73,12 +98,33 @@ export default function Meme() {
 
   const handleEnter = (e) => {
     if (e.key === "Enter") {
+<<<<<<< HEAD
+=======
+      // console.log("Enter key pressed");
+>>>>>>> 8c6adf45a5db6d5268075921ff8c361b0b64a623
       addText();
     }
   };
 
   function copyImage() {
+<<<<<<< HEAD
     html2canvas(memeImage.current, { allowTaint: true, useCORS: true }).then(function (
+=======
+    console.log("copy image function called");
+    let src = document.getElementById("meme");
+
+    // html2canvas(src, { allowTaint: true, useCORS: true }).then(function (
+    //   canvas
+    // ) {
+    //   canvas.toBlob(function (blob) {
+    //     navigator.clipboard.write([
+    //       new window.ClipboardItem({ "image/png": blob }),
+    //     ]);
+    //   });
+    // });
+
+    html2canvas(src, { allowTaint: true, useCORS: true }).then(function (
+>>>>>>> 8c6adf45a5db6d5268075921ff8c361b0b64a623
       canvas
     ) {
       canvas.toBlob(function (blob) {
@@ -136,10 +182,18 @@ export default function Meme() {
           Copy Image
         </motion.button>
       </div>
+<<<<<<< HEAD
       <div className="meme" ref={memeImage}>
         <img className="meme-image" src={meme.randomImage} alt="random meme" />
         {textElements}
       </div>
+=======
+      <div className="meme" id="meme">
+        <img className="meme-image" src={meme.randomImage} alt="random meme" />
+        {textElements}
+      </div>
+      {/* <div className="test"></div> */}
+>>>>>>> 8c6adf45a5db6d5268075921ff8c361b0b64a623
     </motion.main>
   );
 }

@@ -97,6 +97,10 @@ main {
 
 .meme-image {
   max-width: 100%;
+<<<<<<< HEAD
+=======
+  /* max-height: 500px; */
+>>>>>>> 8c6adf45a5db6d5268075921ff8c361b0b64a623
   border-radius: 3px;
   margin-top: 70px;
 }
@@ -117,6 +121,18 @@ main {
     -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
     2px 2px 5px #000;
 }
+<<<<<<< HEAD
+=======
+/* 
+.test {
+  height: 100px;
+  width: 100px;
+  background-color: slateblue;
+  position: absolute;
+  top: 70px;
+  right: 0;
+} */
+>>>>>>> 8c6adf45a5db6d5268075921ff8c361b0b64a623
 
 @media only screen and (max-width: 768px) {
   .meme {
