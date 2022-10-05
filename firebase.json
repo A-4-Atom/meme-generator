@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "vikaschauhan",
+    "public": "dist",
+    "ignore": [],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

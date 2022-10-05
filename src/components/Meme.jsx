@@ -11,6 +11,7 @@ export default function Meme() {
     texts: [],
   });
   const inputText = useRef();
+  const memeImage = useRef();
   const [allMemes, setAllMemes] = useState([]);
 
   useEffect(() => {
@@ -35,7 +36,6 @@ export default function Meme() {
     } else {
       setMeme((oldMeme) => {
         const newText = oldMeme.texts;
-        // newText.push({inputText.current.value});
         newText.push({
           text: inputText.current.value,
           id: nanoid(),
@@ -46,10 +46,8 @@ export default function Meme() {
         };
       });
     }
-    // console.log(meme.texts);
   }
 
-  //For Desktop
   function deleteTexts(id) {
     setMeme((oldMeme) => {
       const updatedTexts = oldMeme.texts.filter((item) => item.id !== id);
@@ -59,19 +57,6 @@ export default function Meme() {
       };
     });
   }
-
-  //for Mobile
-  // function deleteTextMobile(id) {
-  //   // if (isMobile && event.detail === 2) {
-  //   //   setMeme((oldMeme) => {
-  //   //     const updatedTexts = oldMeme.texts.filter((item) => item.id !== id);
-  //   //     return {
-  //   //       ...oldMeme,
-  //   //       texts: updatedTexts,
-  //   //     };
-  //   //   });
-  //   // }
-  // }
 
   const textElements = meme.texts.map((item) => (
     <Draggable bounds="parent" key={item.id}>
@@ -93,9 +78,7 @@ export default function Meme() {
   };
 
   function copyImage() {
-    console.log("copy image function called");
-    let src = document.getElementById("meme");
-    html2canvas(src, { allowTaint: true, useCORS: true }).then(function (
+    html2canvas(memeImage.current, { allowTaint: true, useCORS: true }).then(function (
       canvas
     ) {
       canvas.toBlob(function (blob) {
@@ -153,11 +136,10 @@ export default function Meme() {
           Copy Image
         </motion.button>
       </div>
-      <div className="meme" id="meme">
+      <div className="meme" ref={memeImage}>
         <img className="meme-image" src={meme.randomImage} alt="random meme" />
         {textElements}
       </div>
-      {/* <div className="test"></div> */}
     </motion.main>
   );
 }
