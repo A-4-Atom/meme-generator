@@ -48,7 +48,7 @@ export default function Meme() {
     }
   }
 
-  function deleteTextDesktop(id) {
+  function deleteTexts(id) {
     setMeme((oldMeme) => {
       const updatedTexts = oldMeme.texts.filter((item) => item.id !== id);
       return {
